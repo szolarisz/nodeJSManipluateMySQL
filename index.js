@@ -1,10 +1,10 @@
 const mysql = require('mysql');
-const http = require('http');
+//const http = require('http');
 
 const connection = mysql.createConnection({
     host: "localhost",
     port: "3306",
-    database: "dolgozok",
+    database: "dolgozok1g",
     user: "root",
     password: ""
 });
@@ -18,10 +18,11 @@ connection.connect((err) => {
     connection.query(myQuery, (err, result, fields) => {
         if (err) throw err;
 
-        console.log(result);
+        //console.log(result);
+        //console.log(JSON.stringify(result));
         console.log('-----------------------------');
         const sorok = JSON.parse(JSON.stringify(result));
-        console.log(sorok);
+        //console.log(sorok);
         for (sor of sorok) {
             console.log(`Név:  ${sor.nev}`);
         }
